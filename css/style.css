@@ -1,0 +1,14 @@
+.container{
+height: 300px;
+width: 100%;
+}
+#display{
+width: 80%;
+font-size: 50px;
+text-align: center;
+margin: 0px auto;
+}
+
+.buttons{
+text-align: center;
+}

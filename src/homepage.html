@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Home</title>
+
+<style>
+body {
+  background-color: #660033;
+  text-align: center;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+</style>
+
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+</style>
+</head>
+<body>
+
+<div class="navbar">
+  <a href="#home">Home</a>
+  <a href="about.html">About</a>
+  <a href="post.html">Your Timings</a>
+  
+  <div class="dropdown">
+    <button class="dropbtn">Levels 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="level1.html">level 1</a>
+      <a href="level2.html">level 2</a>
+      <a href="#">Link 3</a>
+    </div>
+  </div> 
+</div>
+</body>
+
+</head>
+
+
+<body>
+<head>
+<style>
+a.class1:link, a.class1:visited {
+  background-color: black;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a.class1:hover, a.class1:active {
+  background-color: white;
+    color: black;
+  
+}
+</style>
+</head>
+<h1>These are the levels</h1>
+
+<p>Hey guys! welcome to TipityType. I am your assistant, and I will tell you how to start. So, first click on the links to begin your lessons. Then, when you're done with it, you can go ahead and check it off in the check boxes. So, good luck!</p> 
+<table class="tableContainer" cellspacing="100px">
+ <tr>
+  <td style="height:25px;">Your level:</td>
+  <td><form> Where are you? <br> <input type="checkbox" id="done" name="done" value="done"></br> <label for="done">Done</label></form></td>
+  <td><a href=level1.html class="class1">Level one</a></td>
+</tr>
+<tr>
+  <td style="height:25px;">Your level:</td>
+  <td><form> Where are you? <br> <input type="checkbox" id="done" name="done" value="done"></br> <label for="done">Done</label></form></td>
+  <td><a href=level2.html class="class1">Level two</a></td>
+</tr>
+</table>
+</body>
+</html>

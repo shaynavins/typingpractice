@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<head>
+
+<title>Home</title>
+<body oncopy="return false" oncut="return false" onpaste="return false">
+
+<style>
+body {
+	background-color: pink;
+	text-align: center;
+	color: white;
+	font-family: Arial, Helvetica, sans-serif;
+}
+</style>
+
+<style>
+body {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+	overflow: hidden;
+	background-color: #333;
+}
+
+.navbar a {
+	float: left;
+	font-size: 16px;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+.dropdown {
+	float: left;
+	overflow: hidden;
+}
+
+.dropdown .dropbtn {
+	font-size: 16px;
+	border: none;
+	outline: none;
+	color: white;
+	padding: 14px 16px;
+	background-color: inherit;
+	font-family: inherit;
+	margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+	background-color: red;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	z-index: 1;
+}
+
+.dropdown-content a {
+	float: none;
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	text-align: left;
+}
+
+.dropdown-content a:hover {
+	background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+</style>
+</head>
+<body>
+
+	<div class="navbar">
+		<a href="homepage.html">Home</a> <a href="about.html">About</a> <a
+			href="post.html">Your Timings</a>
+
+		<div class="dropdown">
+			<button class="dropbtn">
+				Levels <i class="fa fa-caret-down"></i>
+			</button>
+			<div class="dropdown-content">
+				<a href="#level1">level 1</a> <a href="level2.html">level 2</a> <a
+					href="#">Link 3</a>
+			</div>
+		</div>
+	</div>
+</body>
+
+</head>
+<head>
+<script type="text/javascript" language="javascript">
+ 	let seconds = 0;
+	let minutes = 0;
+	let hours = 0;
+
+	let displaySeconds = 0;
+	let displayMinutes = 0;
+	let displayHours = 0;
+
+	let interval = null;
+
+	let status = "stopped";
+
+	function stopWatch() {
+		seconds++;
+		if (seconds / 60 === 1) {
+			seconds = 0;
+			minutes++;
+
+			if (minutes / 60 === 1) {
+				minutes = 0;
+				hours++;
+			}
+
+		}
+
+		if (seconds < 10) {
+			displaySeconds = "0" + seconds.toString();
+		}
+
+		else {
+			displaySeconds = seconds;
+		}
+
+		if (minutes < 10) {
+			displayMinutes = "0" + minutes.toString();
+		}
+
+		else {
+			displayMinutes = minutes;
+		}
+
+		if (hours < 10) {
+			displayHours = "0" + hours.toString();
+		}
+
+		else {
+			displayHours = hours;
+		}
+
+		document.getElementById("display").innerHTML = displayHours + ":"
+				+ displayMinutes + ":" + displaySeconds;
+		
+		localStorage.setItem("stopclocktime", displayHours + ":"
+				+ displayMinutes + ":" + displaySeconds);
+
+
+	}
+
+	function startStop() {
+
+		if (status === "stopped") {
+			interval = window.setInterval(stopWatch, 1000);
+			document.getElementById("startStop").innerHTML = "Stop";
+			status = "started";
+		}
+
+		else {
+			window.clearInterval(interval);
+			document.getElementById("startStop").innerHTML = "Start";
+			status = "stopped";
+		}
+
+	}
+
+	function reset() {
+		window.clearInterval(interval);
+		seconds = 0;
+		minutes = 0;
+		hours = 0;
+		document.getElementById("display").innerHTML = "00:00:00";
+		document.getElementById("startStop").innerHTML = "Start";
+
+	}
+</script>
+
+<script>
+	function check(form) {
+		var question = document.myform.question.value;
+		var correct = 0;
+		if (question == "asdfgf;lkjhj") {
+			correct++;
+		}
+
+		if (correct < 1) {
+			alert("Wrong answer! You may continue or try again for a better score!")
+			return
+
+
+			
+
+		}
+		alert("right answer")
+		
+		localStorage.setItem("stopclocklevel", "level1");
+		form.action = 'post.html'
+	}
+</script>
+</head>
+<body bgcolor="AliceBlue">
+	<p style="font-family: courier; background-color: Aquamarine; color:black;">
+		Hey guys! Are you ready to do level one??? To start off, click the
+		start button on the stopwatch, then type the text in purple, then you can stop the watch. click submit and it will assess your response. The rest of it will be self-explanatory.  
+		<link rel="stylesheet" href="../css/style.css">
+		</link>
+		<link rel="stylesheet" href="../css/finished.css"></link>
+	<div class="container">
+		<div id="display">00:00:00</div>
+		<div class="buttons">
+			<button id="startStop" onClick="startStop()">start</button>
+			<button id="reset" onClick="reset()">Reset</button>
+		</div>
+		<div>
+			<H2>Time is ticking!</H2>
+			
+			<font color = "#660066" size = "6"><center>Type this: asdfgf;lkjhj</center></font>
+
+
+
+
+			<br> <br>
+			<center>
+				<font color = "#660033"><p>First type the given expression in the first text field. Then
+					click submit. if you get it it right, then fill in your time.</p> 
+					</font>
+			</center>
+			<br> <br>
+
+
+
+			<form name="myform" onsubmit="check(this)">
+				<center>
+					<input type="text" id="question" required>
+					<center>
+						<center>
+							<button type="submit">Submit</button>
+						</center>
+			</form>
+</body>
+</html>
